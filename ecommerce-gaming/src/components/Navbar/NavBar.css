@@ -1,0 +1,34 @@
+.navbar{
+    margin: 0%;
+    padding: 0%;
+}
+.navbar-container{
+    background-color: rgb(131, 130, 130);
+    margin: 0%;
+    padding: 0%;
+}
+.logo-navbar{
+    padding: 10px 20px;
+}
+.nav-item{
+    padding: 10px 3px;
+}
+.nav-link{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    color: black;
+}
+.link-cart{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+.link-cart:hover{
+    color: black;
+}
+.fa-cart-shopping{
+    padding: 10px 25px;
+}

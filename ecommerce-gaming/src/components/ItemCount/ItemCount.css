@@ -1,0 +1,54 @@
+.cont-item-count{
+    display: flex;
+    flex-direction: row;
+    margin: 60px;
+    justify-content: center;
+}
+.cont-controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+    background-color: rgb(243, 217, 220);
+}
+.btn-add{
+    border-radius: 15px;
+    margin: 10px;
+    border: none;
+    background-color: rgb(21, 173, 243);
+}
+.btn-noadd{
+    border-radius: 15px;
+    margin: 10px;
+    border: none;
+    background-color: rgb(21, 173, 243);
+}
+.count{
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+}
+.more{
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+}
+.less{  
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+}
+.btn-add-cart{
+    background-color: rgb(21, 173, 243);
+    border: none;
+    border-radius: 15px;
+}
+.cont-add-cart{
+    display: flex;
+    align-items: center;
+}
+.txt-addcart{
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+}
