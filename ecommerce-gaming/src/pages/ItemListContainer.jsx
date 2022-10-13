@@ -24,14 +24,16 @@ const ItemListContainer = () => {
     <>
     {
       loading ?
-      <h2>Cargando productos...</h2>
+      <div style={{height:'70vh', textAlign:'center', display:'flex', alignItems:'center'}} className='container-fluid'>
+        <svg viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+      </svg>
+      </div>
         :
       <div className='row container-fluid' style={{display:'flex', justifyContent:'center'}}>
         <ItemList/>
       </div>
     }
-    <ItemCount/>
-    <div>ItemListContainer</div>
     </>
   )
 }

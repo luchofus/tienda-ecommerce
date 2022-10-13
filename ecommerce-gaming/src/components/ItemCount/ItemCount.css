@@ -9,7 +9,6 @@
     flex-direction: row;
     align-items: center;
     margin: 15px;
-    background-color: rgb(243, 217, 220);
 }
 .btn-add{
     border-radius: 15px;
@@ -39,16 +38,23 @@
     color: white;
 }
 .btn-add-cart{
-    background-color: rgb(21, 173, 243);
-    border: none;
-    border-radius: 15px;
+	border: none;
+	border-radius: 7px;
+    font-weight: 700;
+    width: 100px;
+	background-color: #ff3f40;
+	box-shadow: 2px 2px 25px -7px #4c4c4c;
+	cursor: pointer;
+}
+.btn-add-cart:active{
+		transform: scale(0.97);
 }
 .cont-add-cart{
     display: flex;
     align-items: center;
 }
 .txt-addcart{
-    font-size: 20px;
-    padding: 15px;
+    font-size: 15px;
+    text-align: center;
     color: white;
 }
