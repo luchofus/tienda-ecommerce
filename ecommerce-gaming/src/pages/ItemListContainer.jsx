@@ -5,20 +5,28 @@ import ItemList from '../components/Items/ItemList'
 import {getProductos} from '../helpers/itemsDisponibles'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
-
-  console.log(productos)
+  const {idCategoria} = useParams()
+  console.log(idCategoria)
 
   useEffect(() => {
-      getProductos()
-      .then(respuesta => setProductos(respuesta))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false))
-  }, [])
+      if(idCategoria){
+        getProductos()
+        .then(respuesta => setProductos(respuesta.filter(productos => productos.categoria === idCategoria)))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+      }else{
+        getProductos()
+        .then(respuesta => setProductos(respuesta))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+      }
+  }, [idCategoria])
 
   return (
     <>

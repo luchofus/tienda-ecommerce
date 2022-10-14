@@ -1,11 +1,15 @@
 .navbar{
     margin: 0%;
     padding: 0%;
+    position: fixed;
+    width: 100vw;
+    z-index: 10000;
 }
 .navbar-container{
     background-color: rgb(131, 130, 130);
     margin: 0%;
     padding: 0%;
+    width: 100vw;
 }
 .logo-navbar{
     padding: 10px 20px;

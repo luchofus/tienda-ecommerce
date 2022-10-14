@@ -1,43 +1,46 @@
 import React from 'react'
 import CartWidget from './CartWidget'
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import './NavBar.css'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 return (
-<nav className='navbar navbar-expand-lg'>
+<Navbar className='navbar navbar-expand-lg'>
     <div className='container-fluid navbar-container'>
-        <a className='navbar-brand logo-navbar' href="#">Logo</a>
+        <Link to='/' className='navbar-brand logo-navbar'>Logo</Link>
         <button className='navbar-toggler' type='button' data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
-            <ul className='navbar-nav'>
+            <Nav className="me-auto navbar-nav">
                 <li className='nav-item'>
-                    <a className='nav-link' aria-current="page" href='#'>GamingStore</a>
+                    <Link to='/' className='nav-link' aria-current="page">GamingStore</Link>
                 </li>
                 <li className='nav-item'>
-                    <a className='nav-link' href="#">Acción</a>
+                    <Link to='/categoria/accion' className='nav-link' aria-current="page">Acción</Link>
                 </li>
                 <li className='nav-item'>
-                    <a className='nav-link' href="#">Aventura</a>
+                    <Link to='/categoria/aventura' className='nav-link' aria-current="page">Aventura</Link>
                 </li>
                 <li className='nav-item'>
-                    <a className='nav-link' href="#">Deportes</a>
+                    <Link to='/categoria/deportes' className='nav-link' aria-current="page">Deportes</Link>
                 </li>
                 <li className='nav-item'>
-                    <a className='nav-link' href="#">Disparos</a>
+                    <Link to='/categoria/disparos' className='nav-link' aria-current="page">Disparos</Link>
                 </li>
                 <li className='nav-item'>
-                    <a className='nav-link' href="#">Terror</a>
+                    <Link to='/categoria/terror' className='nav-link' aria-current="page">Terror</Link>
                 </li>
-            </ul>
+            </Nav>
         </div>
         <div className=''>
             <CartWidget/>
         </div>
     </div>
-</nav>
+</Navbar>
 )
 }
 export default NavBar
