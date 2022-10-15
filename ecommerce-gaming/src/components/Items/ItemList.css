@@ -1,17 +1,18 @@
-.image-producto{
+.image-producto {
     height: 250px;
     width: 100%;
     padding: 10px;
 }
+
 /* From uiverse.io by @barisdogansutcu */
 svg {
     width: 3.25em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
     margin: 0 auto;
-   }
-   
-   circle {
+}
+
+circle {
     fill: none;
     stroke: hsl(214, 97%, 59%);
     stroke-width: 2;
@@ -19,27 +20,43 @@ svg {
     stroke-dashoffset: 0;
     stroke-linecap: round;
     animation: dash4 1.5s ease-in-out infinite;
-   }
-   
-   @keyframes rotate4 {
+}
+
+@keyframes rotate4 {
     100% {
-     transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-   }
-   
-   @keyframes dash4 {
+}
+
+@keyframes dash4 {
     0% {
-     stroke-dasharray: 1, 200;
-     stroke-dashoffset: 0;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
     }
-   
+
     50% {
-     stroke-dasharray: 90, 200;
-     stroke-dashoffset: -35px;
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
     }
-   
+
     100% {
-     stroke-dashoffset: -125px;
+        stroke-dashoffset: -125px;
     }
-   }
-   
+}
+.items-detail{
+    background-color: rgb(46, 167, 236);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.items-detail:hover{
+    background-color: white;
+    color: rgb(46, 167, 236);
+}
+.info-items{
+    font-weight: 700;
+}

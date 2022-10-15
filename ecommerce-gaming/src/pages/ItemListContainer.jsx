@@ -12,20 +12,22 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
   const {idCategoria} = useParams()
-  console.log(idCategoria)
+  
+  console.log(productos)
 
   useEffect(() => {
-      if(idCategoria){
-        getProductos()
-        .then(respuesta => setProductos(respuesta.filter(productos => productos.categoria === idCategoria)))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))
-      }else{
-        getProductos()
-        .then(respuesta => setProductos(respuesta))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))
-      }
+    if(idCategoria){
+      getProductos()
+      .then(respuesta => setProductos(respuesta.filter(producto => producto.categoria === idCategoria)))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false))
+    }
+    else{
+      getProductos()
+      .then(res => setProductos(res))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false))
+    }
   }, [idCategoria])
 
   return (
@@ -38,9 +40,7 @@ const ItemListContainer = () => {
       </svg>
       </div>
         :
-      <div className='row container-fluid' style={{display:'flex', justifyContent:'center'}}>
-        <ItemList/>
-      </div>
+        <ItemList productos={productos} /> 
     }
     </>
   )

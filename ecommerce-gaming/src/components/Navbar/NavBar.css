@@ -6,24 +6,41 @@
     z-index: 10000;
 }
 .navbar-container{
-    background-color: rgb(131, 130, 130);
+    background-color: black;
     margin: 0%;
     padding: 0%;
     width: 100vw;
 }
 .logo-navbar{
     padding: 10px 20px;
+    color: white;
 }
 .nav-item{
     padding: 10px 3px;
 }
 .nav-link{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
     text-decoration: none;
     color: white;
     transition: all 0.3s;
 }
+.nav-home{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(196, 17, 17);
+    transition: all 0.3s;
+}
+.nav-home:hover{
+    color: rgb(250, 115, 115);
+}
+.nav-home:focus{
+    color: rgb(196, 17, 17);
+}
+
 .nav-link:hover{
-    color: black;
+    color: rgb(214, 22, 22);
 }
 .link-cart{
     text-decoration: none;
@@ -33,6 +50,13 @@
 .link-cart:hover{
     color: black;
 }
+.nav-link:focus{
+    color: white;
+}
 .fa-cart-shopping{
     padding: 10px 25px;
+}
+.img-logo{
+    height: 60px;
+    width: 120px;
 }

@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
     return (
-        <a className='link-cart' href="#">
+        <Link to='/cart' className='link-cart'>
             <i className='fa-solid fa-cart-shopping'></i>
-        </a>
+        </Link>
     )
 }
 
