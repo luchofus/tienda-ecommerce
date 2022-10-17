@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import CartWidget from '../Navbar/CartWidget'
 import './ItemCount.css'
 
 const ItemCount = () => {
