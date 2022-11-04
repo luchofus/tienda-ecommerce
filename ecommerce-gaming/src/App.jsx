@@ -4,12 +4,12 @@ import NavBar from './components/Navbar/NavBar'
 import ItemDetailContainer from './pages/ItemDetailContainer'
 import ItemListContainer from './pages/ItemListContainer'
 import CarritoPage from './pages/CarritoPage/CarritoPage'
-
+import {CartContextProvider } from './context/cartContext'
 
 
 function App() {
   return (
-    <>
+    <CartContextProvider>
     <BrowserRouter>
       <NavBar/>
       <Routes> 
@@ -23,7 +23,7 @@ function App() {
         <Route path='/cart' element={<CarritoPage/>}/>
       </Routes>
     </BrowserRouter>
-    </>
+    </CartContextProvider>
   )
     
 }

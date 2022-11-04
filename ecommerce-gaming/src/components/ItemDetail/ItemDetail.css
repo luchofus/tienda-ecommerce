@@ -1,0 +1,23 @@
+.cont-card-detail{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-detail{
+    margin: 20px 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.card-detail:hover{
+    transform:scale(1.1, 1.2);
+}
+.image-producto-detail{
+    width: 280px;
+    height: 230px;
+}

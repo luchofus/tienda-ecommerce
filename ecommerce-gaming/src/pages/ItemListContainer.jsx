@@ -1,33 +1,29 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import ItemCount from '../components/ItemCount/ItemCount'
 import ItemList from '../components/Items/ItemList'
-import {getProductos} from '../helpers/itemsDisponibles'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+// import {getProductos} from '../helpers/itemsDisponibles'
+import { collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
+import { memo } from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = memo(() => {
 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
   const {idCategoria} = useParams()
   
-  console.log(productos)
+  const traerProductos = () => {
+    const db = getFirestore()
+    const queryCollection = collection(db, 'items')
+    const queryFiltrada = idCategoria ? query(queryCollection, where('categoria', '==', idCategoria)) : queryCollection
+    getDocs(queryFiltrada)
+    .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+    .catch(err => console.log(err))
+    .finally(() => setLoading(false))
+  }
 
   useEffect(() => {
-    if(idCategoria){
-      getProductos()
-      .then(respuesta => setProductos(respuesta.filter(producto => producto.categoria === idCategoria)))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false))
-    }
-    else{
-      getProductos()
-      .then(res => setProductos(res))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false))
-    }
+    traerProductos()
   }, [idCategoria])
 
   return (
@@ -44,6 +40,6 @@ const ItemListContainer = () => {
     }
     </>
   )
-}
+})
 
 export default ItemListContainer
